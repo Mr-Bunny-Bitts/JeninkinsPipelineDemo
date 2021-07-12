@@ -18,10 +18,10 @@ pipeline {
                     echo directory !_count! is %%a
                     rd /q %%a
                     if "!_count!"=="10" (
-                          del /s
+                          goto : done
                     )
                   )
-                
+                :done
                 '''
             }
         }
