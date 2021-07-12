@@ -16,7 +16,7 @@ pipeline {
                 for /f "tokens=*" %%a in ('dir "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\* " /b /o:d') do (
                     set /a _count-=1
                     echo directory !_count! is %%a
-                    rd /q %%a
+                    echo rd /q %%a
                     if "!_count!"=="10" (
                           goto : done
                     )
