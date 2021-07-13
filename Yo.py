@@ -1,8 +1,8 @@
-import shutil
-original = r'D:\\JenkinsHome\\workspace\\PipelineOne\\Hello.py'
-target = r'D:\\JenkinsHome\\workspace\\PipelineOne\\Hello.exe'
-shutil.move(original,target)
+import os
+import re
 
-o = r'D:\\JenkinsHome\\workspace\\PipelineOne\\Hello.exe'
-t = r'D:\\JenkinsHome\\workspace\\PipelineOne\\[Release]\\Hello.zip'
-shutil.move(o,t)
+filepath = os.getcwd()
+files = os.listdir(filepath)
+files = sorted(files,key=os.path.getmtime)
+for file in files[:11]:
+    os.remove(file)
