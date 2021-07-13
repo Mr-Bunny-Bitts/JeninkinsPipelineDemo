@@ -7,6 +7,7 @@ pipeline {
             steps { 
                echo 'hello'
                bat 'python Yo.py'
+               bat 'python Hello.py'
             }
         }
         stage('Build') {
