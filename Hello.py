@@ -1,7 +1,7 @@
 import glob
 import os
 import time
-dir_name = 'D:\JenkinsHome\workspace\PipelineOne\[REALEASE]'
+dir_name = 'D:\JenkinsHome\workspace\PipelineOne\[REALEASE]\'
 # Get list of all files only in the given directory
 list_of_files = filter( os.path.isfile,
                         glob.glob(dir_name + '*') )
