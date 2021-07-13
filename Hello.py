@@ -1,16 +1,57 @@
-import glob
+# importing os module
 import os
-import time
-dir_name = 'D:\JenkinsHome\workspace\PipelineOne\[REALEASE]\'
-# Get list of all files only in the given directory
-list_of_files = filter( os.path.isfile,
-                        glob.glob(dir_name + '*') )
-# Sort list of files based on last modification time in ascending order
-list_of_files = sorted( list_of_files,
-                        key = os.path.getmtime)
-# Iterate over sorted list of files and print file path 
-# along with last modification time of file 
-for file_path in list_of_files:
-    timestamp_str = time.strftime(  '%m/%d/%Y :: %H:%M:%S',
-                                time.gmtime(os.path.getmtime(file_path))) 
-    print(timestamp_str, ' -->', file_path)
+
+# main function
+def main():
+    
+    # specify the path
+    path = "D:\JenkinsHome\workspace\PipelineOne\[REALEASE]"
+    
+    # specify the extension
+    extension = ".exe"
+    
+    # checking whether the path exist or not
+    if os.path.exists(path):
+        
+        # check whether the path is directory or not
+        if os.path.isdir(path):
+        
+            # iterating through the subfolders
+            for root_folder, folders, files in os.walk(path):
+                
+                # checking of the files
+                for file in files:
+
+                    # file path
+                    file_path = os.path.join(root_folder, file)
+
+                    # extracting the extension from the filename
+                    file_extension = os.path.splitext(file_path)[1]
+
+                    # checking the file_extension
+                    if extension == file_extension:
+                        
+                        # deleting the file
+                        if not os.remove(file_path):
+                            
+                            # success message
+                            print(f"{file_path} deleted successfully")
+                            
+                        else:
+                            
+                            # failure message
+                            print(f"Unable to delete the {file_path}")
+        
+        else:
+            
+            # path is not a directory
+            print(f"{path} is not a directory")
+    
+    else:
+        
+        # path doen't exist
+        print(f"{path} doesn't exist")
+
+if __name__ == '__main__':
+    # invoking main function
+    main()
