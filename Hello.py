@@ -8,7 +8,7 @@ def main():
     path = "D:\JenkinsHome\workspace\PipelineOne\[REALEASE]"
     
     # specify the extension
-    extension = ".exe"
+    extension = ".zip"
     
     # checking whether the path exist or not
     if os.path.exists(path):
