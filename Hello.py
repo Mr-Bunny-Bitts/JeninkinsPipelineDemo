@@ -11,10 +11,10 @@ def main():
 	deleted_files_count = 0
 
 	# specify the path
-	path = "D:\JenkinsHome\workspace\PipelineOne\[REALEASE]"
+	path = "D:\JenkinsHome\workspace\PipelineOne\[REALEASE]\Test*"
 
 	# specify the days
-	days = 1
+	days = 10
 
 	# converting days to seconds
 	# time.time() returns current time in seconds
