@@ -14,7 +14,7 @@ def main():
 	path = "D:\JenkinsHome\workspace\PipelineOne\[REALEASE]"
 
 	# specify the days
-	days = 30
+	days = 1
 
 	# converting days to seconds
 	# time.time() returns current time in seconds
