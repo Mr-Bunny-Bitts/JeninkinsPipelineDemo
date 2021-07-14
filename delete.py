@@ -3,6 +3,6 @@ import re
 
 filepath = "D:\JenkinsHome\workspace\PipelineOne\[REALEASE]"
 files = os.listdir(filepath)
-files = sorted(files,key=os.path.getctime)
-for file in files[10:]:
+sorted_files = sorted(files)
+for file in sorted_files[10:]:
     os.remove(file)
