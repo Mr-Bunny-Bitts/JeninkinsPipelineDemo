@@ -6,7 +6,7 @@ pipeline {
         stage('Clear') {
             steps { 
                echo 'hello'
-               bat 'python Yo.py'
+               bat 'python delete.py'
                //bat 'python Hello.py'
             }
         }
