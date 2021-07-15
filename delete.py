@@ -1,7 +1,7 @@
 import os
 import re
-import glob
-filepath = glob.glob("D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\*.zip")
+
+filepath = "D:\\JenkinsHome\\workspace\\PipelineOne\\[REALEASE]\\"
 files = os.listdir(filepath)
 
 sorted_files = sorted(files,key=os.path.getmtime, reverse=False)
