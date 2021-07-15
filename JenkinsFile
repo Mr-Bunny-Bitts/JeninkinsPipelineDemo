@@ -7,7 +7,6 @@ pipeline {
             steps { 
                echo 'hello'
                bat 'python delete.py'
-               //bat 'python Hello.py'
             }
         }
         stage('Build') {
