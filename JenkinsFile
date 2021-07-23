@@ -2,38 +2,38 @@ pipeline {
     agent any
     node('Agent_New'){
 
-    stages {
-    
-        stage('Clear') {
-            steps { 
-               echo 'hello'
-               //bat 'python delete.py'
+        stages {
+        
+            stage('Clear') {
+                steps { 
+                    echo 'hello'
+                    //bat 'python delete.py'
+                   }
+                }
+            stage('Build') {
+                steps {
+                    echo 'Building'
+                    bat 'build.bat'
+                   }
+                }
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying'
+                    bat 'deploy.bat'
+                   }
+                }
+            stage('Test') {
+                steps {
+                    echo 'Testing '
+                    bat 'pipelinetest.bat'
+                   }
+                }
+            stage('Release') {
+                steps {
+                    echo 'Releasing'
+                    bat 'release.bat'
+                   }
+                }
             }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building'
-                bat 'build.bat'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-                bat 'deploy.bat'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing '
-                bat 'pipelinetest.bat'
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Releasing'
-                bat 'release.bat'
-            }
-        }
-    }
-    }
+       }
 }
