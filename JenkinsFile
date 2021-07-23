@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     node('Agent_New'){
 
     stages {
