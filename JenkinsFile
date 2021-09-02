@@ -19,19 +19,19 @@ pipeline {
             stage('Deploy') {
                 steps {
                     echo 'Deploying'
-                    bat 'deploy.bat'
+                    //bat 'deploy.bat'
                    }
                 }
             stage('Test') {
                 steps {
                     echo 'Testing '
-                    bat 'pipelinetest.bat'
+                    //bat 'pipelinetest.bat'
                    }
                 }
             stage('Release') {
                 steps {
                     echo 'Releasing'
-                    bat 'release.bat'
+                    //bat 'release.bat'
                    }
                 }
             }
